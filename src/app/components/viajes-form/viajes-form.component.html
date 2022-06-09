@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="table">
+    <div class="table-header">
+      <div class="header__item">
+        <a id="name" class="filter__link" href="#">OC</a>
+      </div>
+      <div class="header__item">
+        <a id="wins" class="filter__link filter__link--number" href="#"
+          >FolioGEPP</a
+        >
+      </div>
+      <div class="header__item">
+        <a id="draws" class="filter__link filter__link--number" href="#"
+          >FechaGeneracion</a
+        >
+      </div>
+      <div class="header__item">
+        <a id="losses" class="filter__link filter__link--number" href="#"
+          >UsoCFDI</a
+        >
+      </div>
+      <div class="header__item">
+        <a id="total" class="filter__link filter__link--number" href="#"
+          >DocsGEPP</a
+        >
+      </div>
+      <div class="header__item">
+        <a id="total" class="filter__link filter__link--number" href="#"
+          >Detalle
+        </a>
+      </div>
+    </div>
+    <div class="table-content">
+      <ng-container *ngFor="let viaje of viajes">
+        <div class="table-row">
+          <div class="table-data">{{ viaje.datosFolio.OC }}</div>
+          <div class="table-data">{{ viaje.datosFolio.FolioGEPP }}</div>
+          <div class="table-data">{{ viaje.datosFolio.FechaGeneracion }}</div>
+          <div class="table-data">{{ viaje.datosFolio.UsoCFDI }}</div>
+          <div class="table-data">
+            {{ viaje.datosFolio.DocumentosGEPP.DocsGEPP }}
+          </div>
+          <div>
+            <button (click)="verDetalle(viaje)" class="btn-next">
+              Ver más
+            </button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
